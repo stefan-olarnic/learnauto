@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv/
+venv/
+env/
+
+# Pytest
+.pytest_cache/
+report.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
