@@ -14,10 +14,14 @@ class LoginPage:
     def open(self):
         self.driver.get(self.context.base_url + "/login")
 
-    def login(self):
-        self.driver.find_element(*self.username).send_keys(self.context.validuser.username)
-        self.driver.find_element(*self.password).send_keys(self.context.validuser.password)
-        self.driver.find_element(*self.login_button).click()
+    def login(self, username=None, password=None):
+      # Dacă nu dai parametri, folosește userul din context
+      user = username or self.context.validuser.username
+      pwd = password or self.context.validuser.password
+
+      self.driver.find_element(*self.username).send_keys(user)
+      self.driver.find_element(*self.password).send_keys(pwd)
+      self.driver.find_element(*self.login_button).click()
 
     def get_message(self):
         return self.driver.find_element(*self.message).text

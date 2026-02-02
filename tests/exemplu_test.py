@@ -1,4 +1,5 @@
 # exemplu de test pentru cand o sa folosesc fixture-ul de (logged_context)
+from pages.login_page import LoginPage
 
 def test_dashboard(logged_context):
     # logged_context este deja logat

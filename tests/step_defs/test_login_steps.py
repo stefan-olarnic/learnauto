@@ -1,0 +1,22 @@
+import pytest
+from pytest import scenarios, given, when, then, parsers
+from pages.login_page import LoginPage 
+
+# Step: Given I am on the login page
+@given('I am on the login page')
+def open_login_page(context):
+    page = LoginPage(context)
+    page.open()
+    context.login_page = page  # salvăm page object-ul în context
+
+# Step: When I login with username "..." and password "..."
+@when(parsers.parse('I login with username "{username}" and password "{password}"'))
+def login_with_credentials(context, username, password):
+    context.login_page.login(username, password)
+
+# Step: Then I should see the message "..."
+@then(parsers.parse('I should see the message "{expected_message}"'))
+def verify_message(context, expected_message):
+    actual_message = context.login_page.get_message()
+    assert expected_message in actual_message, \
+        f"Expected '{expected_message}' but got '{actual_message}'"
