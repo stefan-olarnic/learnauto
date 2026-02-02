@@ -3,6 +3,7 @@ from selenium import webdriver
 from core.context import Context
 from config.config import ENVIRONMENTS
 from core.user import User
+from pages.login_page import LoginPage
 
 @pytest.fixture
 def context():
@@ -21,3 +22,12 @@ def context():
     yield ctx
 
     driver.quit()
+
+# 🔹 Fixture cu autologin
+@pytest.fixture
+def logged_context(context):
+    page = LoginPage(context)
+    page.open()
+    page.login()  # folosește userul din context
+    yield context
+    # Nu trebuie să închidem browser aici, se face în context
