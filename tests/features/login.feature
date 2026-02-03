@@ -9,8 +9,8 @@ Feature: Login functionality
       Then I should see the message "<message>"
 
       Examples:
-        | username    | password              | message                              |
-        | tomsmith    | SuperSecretPassword!  | You logged into a secure area!       |
-        | invaliduser | anypassword           | Your username is invalid!            |
-        | tomsmith    | wrongpassword         | Your password is invalid!            |
+        | username | password  | message             |
+        | Admin    | admin123  | Dashboard           |
+        | baduser  | badpass   | Invalid credentials |
+        | Admin    | wrongpwd  | Invalid credentials |
       
