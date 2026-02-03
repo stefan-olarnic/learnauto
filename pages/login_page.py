@@ -12,7 +12,7 @@ class LoginPage:
     message = (By.ID, "flash")
 
     def open(self):
-        self.driver.get(self.context.base_url + "/login")
+        self.driver.get(self.context.base_url + "/web/index.php/auth/login")
 
     def login(self, username=None, password=None):
       # Dacă nu dai parametri, folosește userul din context

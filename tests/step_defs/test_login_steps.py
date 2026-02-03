@@ -1,13 +1,15 @@
-import pytest
-from pytest import scenarios, given, when, then, parsers
-from pages.login_page import LoginPage 
+from pytest_bdd import scenarios, given, when, then, parsers
+from pages.login_page import LoginPage
+
+# Încarcă toate scenariile din login.feature
+scenarios('../features/login.feature')
 
 # Step: Given I am on the login page
 @given('I am on the login page')
 def open_login_page(context):
     page = LoginPage(context)
     page.open()
-    context.login_page = page  # salvăm page object-ul în context
+    context.login_page = page
 
 # Step: When I login with username "..." and password "..."
 @when(parsers.parse('I login with username "{username}" and password "{password}"'))

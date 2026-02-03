@@ -1,12 +1,12 @@
 ENVIRONMENTS = {
     "qa": {
-        "base_url": "https://the-internet.herokuapp.com",
+        "base_url": "https://opensource-demo.orangehrmlive.com",
         "valid_user": {
-            "username": "tomsmith",
-            "password": "SuperSecretPassword!"
+            "username": "Admin",
+            "password": "admin123"
         }
     },
     "stage": {
-        "base_url": "https://the-internet.herokuapp.com"
+        "base_url": "https://opensource-demo.orangehrmlive.com"
     }
 }
