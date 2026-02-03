@@ -1,8 +1,7 @@
 import pytest
 from selenium import webdriver
-from core.context import Context
 from config.config import ENVIRONMENTS
-from core.user import User
+from core import User, Context
 from pages.login.login_page import LoginPage
 
 @pytest.fixture
