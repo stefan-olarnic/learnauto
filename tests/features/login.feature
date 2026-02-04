@@ -1,12 +1,10 @@
 Feature: Login functionality
-    Ca user al aplicației
-    Vreau să pot face login
-    Pentru a accesa zona securizată
+    As user I want to be able to login in order to access other main application
 
     Scenario Outline: Login with different credentials
-      Given I am on the login page
-      When I login with username "<username>" and password "<password>"
-      Then I should see the message "<message>"
+      Given User is on login page
+      When User login with username "<username>" and password "<password>"
+      Then "<message>" is displayed
 
       Examples:
         | username | password  | message             |

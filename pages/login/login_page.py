@@ -1,4 +1,5 @@
 from core import BasePage
+from core.base_locators import LOCATORS as BASE_LOCATORS
 from pages.login import LOCATORS
 
 class LoginPage(BasePage):
@@ -19,6 +20,6 @@ class LoginPage(BasePage):
 
     def get_message(self):
         try:
-            return self.find(LOCATORS["dashboard_title"]).text
+            return self.find(BASE_LOCATORS["page_title"]).text
         except:
             return self.find(LOCATORS["error_message"]).text
