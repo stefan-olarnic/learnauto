@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-LOCATORS = {
+LOGIN_LOCATORS = {
     "username":        (By.NAME, "username"),
     "password":        (By.NAME, "password"),
     "login_button":    (By.CSS_SELECTOR, "button[type='submit']"),

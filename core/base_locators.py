@@ -5,4 +5,8 @@ LOCATORS = {
 }
 
 def main_menu_item(name):
-    return (By.XPATH, f"//span[contains(@class, 'oxd-main-menu-item--name') and text()='{name}']/ancestor::a")
+    return (
+        By.XPATH,
+        f"//span[contains(@class, 'oxd-main-menu-item--name')"
+        f"and text()='{name}']/ancestor::a"
+    )    

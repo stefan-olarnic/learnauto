@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
 
-LOCATORS = {
+TIME_LOCATORS = {
       
     }

@@ -1,6 +1,6 @@
 from core import BasePage
 from core.base_locators import LOCATORS as BASE_LOCATORS
-from pages.login import LOCATORS
+from pages.login import LOGIN_LOCATORS
 
 class LoginPage(BasePage):
 
@@ -14,12 +14,12 @@ class LoginPage(BasePage):
         user = username or self.context.validuser.username
         pwd = password or self.context.validuser.password
 
-        self.type(LOCATORS["username"], user)
-        self.type(LOCATORS["password"], pwd)
-        self.click(LOCATORS["login_button"])
+        self.type(LOGIN_LOCATORS["username"], user)
+        self.type(LOGIN_LOCATORS["password"], pwd)
+        self.click(LOGIN_LOCATORS["login_button"])
 
     def get_message(self):
         try:
             return self.find(BASE_LOCATORS["page_title"]).text
         except:
-            return self.find(LOCATORS["error_message"]).text
+            return self.find(LOGIN_LOCATORS["error_message"]).text
