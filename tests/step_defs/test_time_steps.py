@@ -23,4 +23,18 @@ def click_menu_item(logged_context, menu_item):
 @then(parsers.parse('"{page_name}" page is displayed'))
 def verify_page_displayed(logged_context, page_name):
     page = PAGE_MAP[page_name](logged_context)
-    page.verify_page()      
+    page.verify_page()
+
+@given(parsers.parse('User is on "{page_name}" page'))
+def user_on_page(logged_context, page_name):
+    page = PAGE_MAP[page_name](logged_context)
+    page.click_menu(page_name)
+    page.verify_page()
+
+@when('Select personal timesheets')
+def selecting_my_timesheet(logged_context):
+      time_page = TimePage(logged_context)
+      time_page.select_element_from_dropdown(
+          TimePage.MENU_TIMESHEETS,           
+          TimePage.DROPDOWN_MY_TIMESHEETS
+      )

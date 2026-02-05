@@ -12,8 +12,8 @@ def context():
     data = ENVIRONMENTS[env]
 
     valid_user = User(
-        data["valid_user"]["username"],
-        data["valid_user"]["password"]
+        username=data["valid_user"]["username"],
+        password=data["valid_user"]["password"]
     )
 
     ctx = Context(driver, data["base_url"], env, valid_user)

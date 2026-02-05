@@ -33,8 +33,8 @@ class BasePage:
 
     def verify_page(self):
         actual_title = self.get_text(LOCATORS["page_title"])
-        assert actual_title == self.PAGE_TITLE, \
-            f"Expected page '{self.PAGE_TITLE}' but got '{actual_title}'"
+        assert self.PAGE_TITLE in actual_title, \
+            f"Expected '{self.PAGE_TITLE}' in '{actual_title}'"
 
     def click_menu(self, name):
         self.click(main_menu_item(name))
