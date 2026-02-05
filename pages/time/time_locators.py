@@ -8,7 +8,7 @@ def menu_tab_by_text(text):
     """Returnează locator pentru tab din navbar după text"""
     return (
         By.XPATH,
-        f"//div[contains(@class, 'oxd-topbar-body-nav-tab-item')]//a[normalize-space()='{text}']"
+        f"//span[contains(@class, 'oxd-topbar-body-nav-tab-item') and normalize-space()='{text}']"
     )
 
 def dropdown_option_by_text(text):
